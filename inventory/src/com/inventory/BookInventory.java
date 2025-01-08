@@ -20,7 +20,7 @@ public class BookInventory {
     }
 
     public Book getBookById(int id){
-        return books.stream().filter(book -> book.getId() == id).findFirst().get();
+        return books.stream().filter(book -> book.getId() == id).findFirst().orElse(null);
     }
 
     public void removeBook(Book book){
